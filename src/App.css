@@ -1,0 +1,191 @@
+header>img {
+    display: block;
+    margin: 3rem auto;
+}
+
+/* footer {
+    width: 100%;
+    font-size: .6rem;
+    font-weight: 400;
+    text-align: center;
+} */
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+.container {
+    max-width: 992px;
+    margin: auto;
+    background-color: white;
+    border-radius: 1.5rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.green-container {
+
+    background-color: var(--vd-cyan);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 576px) {
+    .container {
+        flex-direction: row;
+        padding: 3rem;
+    }
+
+    form,
+    .green-container {
+        width: 40%;
+        flex-grow: 1;
+    }
+
+    .output-container {
+        margin-bottom: auto;
+    }
+}
+
+h4 {
+    font-size: 1rem;
+    color: var(--d-cyan)
+}
+
+input[type='number'] {
+    text-align: right;
+    color: var(--vd-cyan);
+    width: 100%;
+    margin-top: .5rem;
+    padding: .5rem 1rem;
+    border-radius: .5rem;
+}
+
+input[type='number']:focus {
+    outline: .1rem solid var(--main-cyan)
+}
+
+#bill-input {
+    background: var(--vl-cyan) url('./images/icon-dollar.svg') no-repeat 1rem center;
+}
+
+#people-input {
+    background: var(--vl-cyan) url('./images/icon-person.svg') no-repeat 1rem center;
+}
+
+
+
+
+
+.tip-switch-field {
+    width: 100%;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.tip-switch-field>label {
+    width: 45%;
+    flex-grow: 1;
+}
+
+input[type='radio'] {
+    width: 0;
+    height: 0;
+    position: absolute;
+}
+
+input[type='radio']+span {
+    display: block;
+    background-color: var(--vd-cyan);
+    color: var(--vl-cyan);
+    text-align: center;
+    padding: .5rem;
+    border-radius: .3rem;
+}
+
+#custom-radio+span {
+    background-color: var(--vl-cyan);
+    color: var(--d-cyan)
+}
+
+
+.tip-switch-field span:hover {
+    background-color: var(--l-main-cyan);
+    color: var(--vd-cyan)
+}
+
+.tip-switch-field input:checked+span {
+    background-color: var(--main-cyan);
+    color: var(--vd-cyan)
+}
+
+#custom-input {
+    display: block;
+    flex-grow: 1;
+    margin-top: 0;
+    background: var(--vl-cyan)
+}
+
+@media (min-width: 992px) {
+    .tip-switch-field>label {
+        width: 25%;
+    }
+
+}
+
+.output-container>div {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0;
+}
+
+.output-container h4 {
+    color: var(--vl-cyan);
+}
+
+.output-container h4>span {
+    color: var(--m-cyan);
+    font-size: .8rem;
+    display: block;
+}
+
+.output-amount {
+    font-size: 2rem;
+    color: var(--main-cyan)
+}
+
+.btn {
+    border: none;
+    text-align: center;
+    color: var(--vd-cyan);
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-family: inherit;
+    font-weight: inherit;
+    background-color: var(--main-cyan);
+    width: 100%;
+    margin-top: .5rem;
+    padding: .5rem 1rem;
+    border-radius: .5rem;
+}
+
+.btn:hover {
+    background-color: var(--l-main-cyan);
+}
