@@ -40,4 +40,11 @@ body {
     font-size: 1.5rem;
     font-weight: 700;
     background-color: var(--l-cyan);
+    position: relative;
+}
+
+#root {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 3rem;
 }

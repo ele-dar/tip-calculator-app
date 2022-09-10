@@ -1,17 +1,19 @@
-header>img {
-    display: block;
-    margin: 3rem auto;
+main {
+    place-self: center;
 }
 
-/* footer {
-    width: 100%;
-    font-size: .6rem;
-    font-weight: 400;
+h1 {
+    padding: 2rem;
     text-align: center;
-} */
+}
+
+footer {
+    margin-top: 1rem;
+    place-self: end center;
+}
+
 .attribution {
-    font-size: 11px;
-    text-align: center;
+    font-size: .6rem;
 }
 
 .attribution a {
@@ -19,7 +21,7 @@ header>img {
 }
 
 .container {
-    max-width: 992px;
+    /* max-width: 992px; */
     margin: auto;
     background-color: white;
     border-radius: 1.5rem;
@@ -45,6 +47,10 @@ form {
 }
 
 @media (min-width: 576px) {
+    header {
+        margin-top: 5rem;
+    }
+
     .container {
         flex-direction: row;
         padding: 3rem;
@@ -52,7 +58,7 @@ form {
 
     form,
     .green-container {
-        width: 40%;
+        width: 35%;
         flex-grow: 1;
     }
 
@@ -117,14 +123,13 @@ input[type='radio']+span {
     color: var(--vl-cyan);
     text-align: center;
     padding: .5rem;
-    border-radius: .3rem;
+    border-radius: .5rem;
 }
 
 #custom-radio+span {
     background-color: var(--vl-cyan);
     color: var(--d-cyan)
 }
-
 
 .tip-switch-field span:hover {
     background-color: var(--l-main-cyan);
@@ -138,14 +143,18 @@ input[type='radio']+span {
 
 #custom-input {
     display: block;
-    flex-grow: 1;
+    padding: .5rem;
     margin-top: 0;
     background: var(--vl-cyan)
 }
 
 @media (min-width: 992px) {
+    .container {
+        width: 992px;
+    }
+
     .tip-switch-field>label {
-        width: 25%;
+        width: 30%;
     }
 
 }

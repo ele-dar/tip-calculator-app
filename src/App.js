@@ -14,9 +14,10 @@ function App() {
 
   const calculateTip = () => (+form.tip * +form.bill / 100) / +form.people
   const calculateTotal = () => (+form.bill + (+form.tip * +form.bill / 100)) / +form.people
+  // const calculateTotal = () => +form.bill / +form.people + calculateTip()
 
   useEffect(() => {
-    if (form.bill && form.tip && form.people) {
+    if (form.bill && form.people) {
       setTip(calculateTip())
       setTotal(calculateTotal())
     }
@@ -31,21 +32,26 @@ function App() {
     setForm({ ...form, [e.target.name]: e.target.value })
   }
 
+  const handleCustomRadio = () => {
+    setForm({ ...form, tip: '' })
+    setShowCustom(true)
+  }
+
   const handleReset = () => {
     setForm({
       bill: '',
       tip: '',
       people: ''
     })
+    setTip(null)
+    setTotal(null)
+    setShowCustom(false)
   }
 
   return (
     <>
-      <header>
-        <img src={logo} alt="App logo" />
-      </header>
-
       <main>
+        <h1><img src={logo} alt="App logo" /></h1>
         <div className="container">
           <form>
             <div>
@@ -75,7 +81,6 @@ function App() {
                   <input type="radio" id="tip-50" name="tip" value="50" onChange={handleRadioInput} />
                   <span>50%</span>
                 </label>
-
                 {showCustom ? (
                   <label>
                     <input type="radio" id="custom-radio" name="tip" />
@@ -83,11 +88,10 @@ function App() {
                   </label>
                 ) : (
                   <label>
-                    <input type="radio" id="custom-radio" name="tip" onClick={() => setShowCustom(true)} />
+                    <input type="radio" id="custom-radio" name="tip" onClick={handleCustomRadio} />
                     <span>Custom</span>
                   </label>
                 )}
-
               </div>
             </div>
             <div>
@@ -118,7 +122,6 @@ function App() {
           Coded by <a href="https://github.com/ele-dar">ele-dar</a>.
         </div>
       </footer>
-
     </>
   )
 }
