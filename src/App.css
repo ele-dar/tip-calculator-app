@@ -1,84 +1,75 @@
-main {
-    place-self: center;
-}
-
 h1 {
     padding: 2rem;
     text-align: center;
 }
 
-footer {
-    margin-top: 1rem;
-    place-self: end center;
-}
-
-.attribution {
-    font-size: .6rem;
-}
-
-.attribution a {
-    color: hsl(228, 45%, 44%);
-}
-
+/* CONTAINERS LAYOUT */
 .container {
-    /* max-width: 992px; */
-    margin: auto;
-    background-color: white;
-    border-radius: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100vw;
+    max-width: 992px;
     padding: 2rem;
+    border-radius: 1.5rem;
+    background-color: white;
+}
+
+.form-container {
     display: flex;
     flex-direction: column;
     gap: 2rem;
 }
 
-form {
+.output-container {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
-}
-
-.green-container {
-
-    background-color: var(--vd-cyan);
-    border-radius: 1rem;
+    justify-content: space-between;
     padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
+    border-radius: 1rem;
+    background-color: var(--vd-cyan);
 }
 
 @media (min-width: 576px) {
-    header {
-        margin-top: 5rem;
-    }
-
     .container {
         flex-direction: row;
         padding: 3rem;
     }
 
-    form,
-    .green-container {
-        width: 35%;
-        flex-grow: 1;
-    }
-
+    .form-container,
     .output-container {
-        margin-bottom: auto;
+        width: 45%;
+        flex-grow: 1;
     }
 }
 
+/* FORM */
 h4 {
     font-size: 1rem;
     color: var(--d-cyan)
 }
 
+/* Number inputs */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
 input[type='number'] {
-    text-align: right;
-    color: var(--vd-cyan);
     width: 100%;
     margin-top: .5rem;
     padding: .5rem 1rem;
+    border: none;
     border-radius: .5rem;
+    font-family: inherit;
+    font-size: inherit;
+    color: var(--vd-cyan);
+    text-align: right;
 }
 
 input[type='number']:focus {
@@ -93,22 +84,35 @@ input[type='number']:focus {
     background: var(--vl-cyan) url('./images/icon-person.svg') no-repeat 1rem center;
 }
 
-
-
-
-
-.tip-switch-field {
-    width: 100%;
-    margin-top: 1rem;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 1rem;
+form>div:last-child {
+    position: relative;
 }
 
-.tip-switch-field>label {
+.alert {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: var(--alert);
+}
+
+/* Tip selection */
+.tip-input-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.tip-input-container>label {
     width: 45%;
     flex-grow: 1;
+}
+
+@media (min-width: 992px) {
+    .tip-input-container>label {
+        width: 30%;
+    }
 }
 
 input[type='radio'] {
@@ -119,11 +123,11 @@ input[type='radio'] {
 
 input[type='radio']+span {
     display: block;
+    padding: .5rem;
+    border-radius: .5rem;
     background-color: var(--vd-cyan);
     color: var(--vl-cyan);
     text-align: center;
-    padding: .5rem;
-    border-radius: .5rem;
 }
 
 #custom-radio+span {
@@ -131,70 +135,70 @@ input[type='radio']+span {
     color: var(--d-cyan)
 }
 
-.tip-switch-field span:hover {
+.tip-input-container span:hover {
     background-color: var(--l-main-cyan);
     color: var(--vd-cyan)
 }
 
-.tip-switch-field input:checked+span {
+.tip-input-container input:checked+span {
     background-color: var(--main-cyan);
     color: var(--vd-cyan)
 }
 
 #custom-input {
     display: block;
-    padding: .5rem;
     margin-top: 0;
+    padding: .5rem;
     background: var(--vl-cyan)
 }
 
-@media (min-width: 992px) {
-    .container {
-        width: 992px;
-    }
-
-    .tip-switch-field>label {
-        width: 30%;
-    }
-
-}
-
-.output-container>div {
+/* OUTPUT */
+.output>div {
     display: flex;
     justify-content: space-between;
     margin: 1rem 0;
 }
 
-.output-container h4 {
+.output h4 {
     color: var(--vl-cyan);
 }
 
-.output-container h4>span {
-    color: var(--m-cyan);
-    font-size: .8rem;
+.output h4>span {
     display: block;
+    font-size: .8rem;
+    color: var(--m-cyan);
 }
 
-.output-amount {
+.output-number {
     font-size: 2rem;
     color: var(--main-cyan)
 }
 
 .btn {
-    border: none;
-    text-align: center;
-    color: var(--vd-cyan);
-    font-size: 1.5rem;
-    text-transform: uppercase;
-    font-family: inherit;
-    font-weight: inherit;
-    background-color: var(--main-cyan);
     width: 100%;
     margin-top: .5rem;
     padding: .5rem 1rem;
+    border: none;
     border-radius: .5rem;
+    background-color: var(--main-cyan);
+    color: var(--vd-cyan);
+    font-size: 1.5rem;
+    font-weight: inherit;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: inherit;
 }
 
 .btn:hover {
     background-color: var(--l-main-cyan);
+}
+
+/* FOOTER */
+footer {
+    place-self: end center;
+    font-size: .6rem;
+}
+
+footer a {
+    color: hsl(228, 45%, 44%);
 }

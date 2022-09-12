@@ -8,33 +8,15 @@
     --m-cyan: hsl(184, 14%, 56%);
     --l-cyan: hsl(185, 41%, 84%);
     --vl-cyan: hsl(189, 41%, 97%);
+    --alert: hsl(14, 68%, 64%);
 }
 
-/* Reset */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-input {
-    border: none;
-    background-color: transparent;
-    font-family: inherit;
-    font-size: inherit;
-}
-
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-
-input[type=number] {
-    -moz-appearance: textfield;
-}
-
-/* Custom body styles */
 body {
     font-family: 'Space Mono', monospace;
     font-size: 1.5rem;
@@ -44,7 +26,8 @@ body {
 }
 
 #root {
-    min-height: 100vh;
+    height: 100vh;
     display: grid;
-    grid-template-rows: auto 3rem;
+    grid-template-rows: auto 10vh;
+    place-items: center;
 }
