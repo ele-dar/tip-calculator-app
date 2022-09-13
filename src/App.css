@@ -76,6 +76,10 @@ input[type='number']:focus {
     outline: .1rem solid var(--main-cyan)
 }
 
+input[type='number']:hover {
+    cursor: pointer;
+}
+
 #bill-input {
     background: var(--vl-cyan) url('./images/icon-dollar.svg') no-repeat 1rem center;
 }
@@ -107,6 +111,10 @@ form>div:last-child {
 .tip-input-container>label {
     width: 45%;
     flex-grow: 1;
+}
+
+.tip-input-container>label:hover {
+    cursor: pointer;
 }
 
 @media (min-width: 992px) {
@@ -191,6 +199,7 @@ input[type='radio']+span {
 
 .btn:hover {
     background-color: var(--l-main-cyan);
+    cursor: pointer;
 }
 
 /* FOOTER */

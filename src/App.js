@@ -52,6 +52,7 @@ function App() {
     setTip(null)
     setTotal(null)
     setShowCustom(false)
+    setAlert('')
   }
 
   return (
