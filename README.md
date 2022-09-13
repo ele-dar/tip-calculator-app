@@ -12,5 +12,5 @@ Users should be able to:
 
 ### Result
 
-- [A screenshot of my app](./screenshot.png)
+- [A screenshot of my app](./Screenshot.png)
 - [Try it out here](http://tip-calculator-eledar.netlify.app)
